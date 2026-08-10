@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthik M — Software Architect</title>
+<meta name="description" content="Karthik M — Software Architect in Bengaluru with 9+ years designing scalable, high-performance enterprise systems across InsurTech, healthcare, fintech, and networking. Microservices, distributed systems, cloud-native, and AI-driven platforms.">
+<meta property="og:title" content="Karthik M — Software Architect">
+<meta property="og:description" content="9+ years building scalable enterprise systems across InsurTech, healthcare, fintech, and networking. Currently co-leading engineering with 23 direct reports, delivering AI-driven insurance platforms.">
+<meta property="og:type" content="website">
+<!-- After deploying, change og:image to your absolute URL, e.g. https://YOURUSERNAME.github.io/og-card.png -->
+<meta property="og:image" content="og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1720" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2314304a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' fill='%23c9a959' text-anchor='middle'%3EKM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #faf9f6;
+  --card: #ffffff;
+  --ink: #1c2733;
+  --navy: #14304a;
+  --navy-deep: #0e2438;
+  --brass: #8f6f2e;
+  --brass-soft: #c9a959;
+  --muted: #5b6672;
+  --line: #e4e0d5;
+  --line-strong: #d5cfbf;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16.5px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
+::selection { background: var(--brass-soft); color: var(--navy-deep); }
+a { color: var(--navy); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+/* ---------- Navigation ---------- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.brand {
+  font-family: var(--serif); font-weight: 700; font-size: 1.25rem;
+  color: var(--navy); text-decoration: none; letter-spacing: 0.01em;
+}
+.brand span { color: var(--brass); }
+.nav-links { display: flex; gap: 34px; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
+  padding: 6px 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s;
+}
+.nav-links a:hover { color: var(--navy); border-bottom-color: var(--brass-soft); }
+.nav-toggle {
+  display: none; background: none; border: 1px solid var(--line-strong); border-radius: 4px;
+  padding: 8px 10px; cursor: pointer; color: var(--navy);
+}
+.nav-toggle svg { display: block; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 172px 0 0; }
+.overline {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--brass);
+}
+.overline::before { content: ""; width: 44px; height: 1px; background: var(--brass-soft); }
+.hero h1 {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(3rem, 7.5vw, 5rem); line-height: 1.08;
+  color: var(--navy-deep); margin: 22px 0 8px;
+}
+.hero .role {
+  font-family: var(--serif); font-style: italic; font-weight: 500;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem); color: var(--brass); margin-bottom: 26px;
+}
+.hero .lede { max-width: 46em; color: var(--muted); font-size: 1.09rem; margin-bottom: 38px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 74px; }
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.92rem;
+  padding: 13px 28px; border-radius: 3px; letter-spacing: 0.02em;
+  transition: transform .18s, box-shadow .18s, background .18s, color .18s;
+}
+.btn-primary { background: var(--navy); color: #fff; border: 1px solid var(--navy); }
+.btn-primary:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14,36,56,.18); }
+.btn-ghost { background: transparent; color: var(--navy); border: 1px solid var(--line-strong); }
+.btn-ghost:hover { border-color: var(--brass); color: var(--brass); transform: translateY(-2px); }
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong);
+}
+.stat { padding: 30px 18px; text-align: center; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: none; }
+.stat .num { font-family: var(--serif); font-weight: 700; font-size: 2.15rem; color: var(--navy-deep); line-height: 1.15; }
+.stat .lbl { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+/* ---------- Sections ---------- */
+section { padding: 96px 0 0; }
+.section-head { margin-bottom: 46px; }
+.section-head h2 {
+  font-family: var(--serif); font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.4rem);
+  color: var(--navy-deep); margin-top: 14px;
+}
+
+/* ---------- About ---------- */
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; align-items: start; }
+.about-prose p { color: #3c4652; margin-bottom: 18px; }
+.about-prose strong { color: var(--navy-deep); }
+.fact-card { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 30px; }
+.fact-card h3 {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--brass); margin-bottom: 18px;
+}
+.fact { padding: 11px 0; border-top: 1px solid var(--line); font-size: 0.95rem; }
+.fact:first-of-type { border-top: none; padding-top: 0; }
+.fact .k { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.fact a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--brass-soft); }
+.fact a:hover { color: var(--brass); }
+
+/* ---------- Selected work ---------- */
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px;
+  padding: 30px 28px; display: flex; flex-direction: column;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(14,36,56,.09); border-color: var(--line-strong); }
+.card .where { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+.card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.32rem; color: var(--navy-deep); margin-bottom: 12px; }
+.card p { font-size: 0.93rem; color: var(--muted); margin-bottom: 18px; }
+.card .metric {
+  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line);
+  font-size: 0.88rem; font-weight: 600; color: var(--navy);
+}
+.card .metric em { color: var(--brass); font-style: normal; }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+.tag {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: var(--muted);
+  border: 1px solid var(--line-strong); border-radius: 3px; padding: 3px 9px; background: var(--paper);
+}
+
+/* ---------- Experience ---------- */
+.xp { border-left: 1px solid var(--line-strong); margin-left: 6px; }
+.xp-item { position: relative; padding: 0 0 54px 36px; }
+.xp-item:last-child { padding-bottom: 8px; }
+.xp-item::before {
+  content: ""; position: absolute; left: -5.5px; top: 8px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--brass-soft); border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--brass);
+}
+.xp-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 18px; }
+.xp-head h3 { font-family: var(--serif); font-weight: 600; font-size: 1.42rem; color: var(--navy-deep); }
+.xp-dates { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--brass); white-space: nowrap; }
+.xp-meta { font-size: 0.9rem; color: var(--muted); margin: 3px 0 16px; font-style: italic; }
+.role { margin: 22px 0 0; }
+.role-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 18px; margin-bottom: 8px; }
+.role-head h4 { font-size: 1.02rem; font-weight: 600; color: var(--ink); }
+.role-head .rd { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.xp ul { list-style: none; }
+.xp li { position: relative; padding: 0 0 9px 22px; font-size: 0.95rem; color: #3c4652; }
+.xp li::before { content: "—"; position: absolute; left: 0; color: var(--brass-soft); font-weight: 600; }
+.xp li strong { color: var(--navy-deep); font-weight: 600; }
+.scope { margin: 6px 0 4px; }
+.scope li { padding-bottom: 7px; }
+
+/* ---------- Skills ---------- */
+.skill-row {
+  display: grid; grid-template-columns: 230px 1fr; gap: 10px 34px;
+  padding: 22px 0; border-top: 1px solid var(--line); align-items: start;
+}
+.skill-row:last-child { border-bottom: 1px solid var(--line); }
+.skill-row .cat { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); padding-top: 4px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags .tag { font-size: 0.8rem; padding: 5px 13px; color: #46505c; background: var(--card); }
+
+/* ---------- Education ---------- */
+.edu {
+  background: var(--card); border: 1px solid var(--line); border-radius: 4px;
+  padding: 34px 36px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px 24px;
+}
+.edu h3 { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--navy-deep); }
+.edu .school { color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+.edu .when { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--brass); }
+
+/* ---------- Contact ---------- */
+.contact { text-align: center; padding-bottom: 30px; }
+.contact .overline { justify-content: center; }
+.contact .overline::after { content: ""; width: 44px; height: 1px; background: var(--brass-soft); }
+.contact h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 5vw, 2.9rem); color: var(--navy-deep); margin: 18px 0 14px; }
+.contact .sub { color: var(--muted); max-width: 34em; margin: 0 auto 34px; }
+.contact-details { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 46px; margin-top: 40px; }
+.cd { font-size: 0.95rem; }
+.cd .k { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass); margin-bottom: 3px; }
+.cd a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.cd a:hover { color: var(--brass); border-bottom-color: var(--brass); }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--line); margin-top: 90px; padding: 30px 0 36px; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 0.85rem; color: var(--muted); }
+.foot a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.foot a:hover { color: var(--brass); }
+
+/* ---------- Reveal ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Dark mode (follows system) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1720;
+    --card: #161f2b;
+    --ink: #dfdacf;
+    --navy: #cfae62;
+    --navy-deep: #ece7db;
+    --brass: #cfae62;
+    --brass-soft: #c9a959;
+    --muted: #a4adb8;
+    --line: #26313e;
+    --line-strong: #384554;
+  }
+  .nav { background: rgba(15, 23, 32, 0.92); }
+  ::selection { background: var(--brass-soft); color: #0f1720; }
+  .about-prose p, .xp li { color: #c3cbd4; }
+  .skill-tags .tag { color: #c3cbd4; }
+  .btn-primary { background: var(--brass-soft); border-color: var(--brass-soft); color: #10151c; }
+  .btn-primary:hover { background: #d8bb70; box-shadow: 0 8px 20px rgba(0,0,0,.45); }
+  .card:hover { box-shadow: 0 14px 30px rgba(0,0,0,.45); }
+  .xp-item::before { border-color: var(--paper); }
+  .cd a { color: var(--ink); }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  :root {
+    --paper: #fff; --card: #fff; --ink: #111;
+    --navy: #14304a; --navy-deep: #0e2438;
+    --brass: #6e5624; --brass-soft: #8f6f2e;
+    --muted: #444; --line: #ccc; --line-strong: #bbb;
+  }
+  @page { margin: 12mm; }
+  html { scroll-behavior: auto; }
+  body { background: #fff; font-size: 11.5px; line-height: 1.45; }
+  .nav, .cta-row { display: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+  .hero { padding: 0; }
+  .hero h1 { font-size: 2.3rem; margin: 8px 0 4px; }
+  .hero .role { font-size: 1.1rem; margin-bottom: 10px; }
+  .hero .lede { margin-bottom: 14px; font-size: 0.95rem; }
+  section { padding: 20px 0 0; }
+  .section-head { margin-bottom: 14px; }
+  .section-head h2 { font-size: 1.35rem; margin-top: 4px; }
+  .stat { padding: 10px 6px; }
+  .stat .num { font-size: 1.35rem; }
+  .about-grid { gap: 18px; }
+  .about-prose p, .xp li { color: #222; }
+  .skill-tags .tag { color: #333; }
+  .work-grid { gap: 10px; }
+  .card, .edu, .fact-card { border: 1px solid #ccc; padding: 12px; box-shadow: none !important; transform: none !important; }
+  .card h3 { font-size: 1.05rem; }
+  .xp-item { padding-bottom: 18px; }
+  .xp-item, .card, .edu, .skill-row, .role { break-inside: avoid; }
+  .skill-row { padding: 8px 0; }
+  .contact { padding-bottom: 0; }
+  .contact .btn { background: none !important; border: none; color: var(--navy); padding: 0; font-size: 1rem; }
+  .contact-details { margin-top: 12px; }
+  footer { margin-top: 18px; padding: 10px 0; }
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 34px; }
+  .work-grid { grid-template-columns: 1fr 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { border-left: none; }
+  .stat { border-top: 1px solid var(--line); }
+  .stat:nth-child(-n+2) { border-top: none; }
+  .skill-row { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 680px) {
+  .hero { padding-top: 140px; }
+  section { padding-top: 72px; }
+  .work-grid { grid-template-columns: 1fr; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: absolute; top: 68px; left: 0; right: 0;
+    background: var(--paper); border-bottom: 1px solid var(--line);
+    flex-direction: column; gap: 0; padding: 8px 28px 16px; display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .xp-item { padding-left: 26px; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Karthik <span>M</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M1 1h18M1 7h18M1 13h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <p class="overline">Software Architect · Bengaluru, India</p>
+  <h1>Karthik M</h1>
+  <p class="role">Building enterprise systems that scale — for nine years and counting.</p>
+  <p class="lede">Software Architect with 9+ years of experience designing and building scalable, high-performance enterprise systems across InsurTech, healthcare, fintech, and networking. Specialized in microservices architecture, distributed systems, and cloud-native applications — currently co-leading engineering for AI-driven insurance products and data platforms.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#contact">Get in touch</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/karthik-mapalakaje" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn btn-ghost" href="Karthik_M_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num">9+</div><div class="lbl">Years of Experience</div></div>
+    <div class="stat"><div class="num">23</div><div class="lbl">Direct Reports</div></div>
+    <div class="stat"><div class="num">500K+</div><div class="lbl">Platform Users</div></div>
+    <div class="stat"><div class="num">7B+</div><div class="lbl">Daily Queries Served</div></div>
+  </div>
+</section>
+
+<section id="about" class="wrap reveal">
+  <div class="section-head">
+    <p class="overline">About</p>
+    <h2>Architecture with a bias for outcomes</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-prose">
+      <p>I design the systems that keep businesses running at scale — from a distributed DNS security platform answering <strong>7B+ queries a day</strong> at Infoblox, to <strong>EDITH</strong>, Onsurity's unified AI-driven insurance platform that replaced a fragmented stack of 54 manual Excel raters with a single engine built on microservices, Temporal workflows, and open-source LLM orchestration.</p>
+      <p>Today I co-lead the engineering team at Onsurity with <strong>23 engineers reporting directly</strong> across backend, AI/ML, frontend, and QA — working with the leadership team to deliver InsurTech products on Java, Spring Boot, and Snowflake, and overseeing a dedicated data engineering group for analytics and pipelines.</p>
+      <p>My path from developer to architect has run through contract lifecycle management, financial services, network security, healthcare, and insurance — and the throughline is the same: take a messy, manual, high-stakes domain and give it a clean, resilient system that people can trust.</p>
+    </div>
+    <aside class="fact-card">
+      <h3>At a glance</h3>
+      <div class="fact"><span class="k">Currently</span>Software Architect, Onsurity</div>
+      <div class="fact"><span class="k">Based in</span>Bengaluru, Karnataka, India</div>
+      <div class="fact"><span class="k">Focus</span>Microservices · Distributed Systems · AI-driven Platforms</div>
+      <div class="fact"><span class="k">Domains</span>InsurTech · Healthcare · Fintech · Network Security</div>
+      <div class="fact"><span class="k">Email</span><a href="mailto:karthikmapalakaje@gmail.com">karthikmapalakaje@gmail.com</a></div>
+      <div class="fact"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/karthik-mapalakaje" target="_blank" rel="noopener">in/karthik-mapalakaje</a></div>
+    </aside>
+  </div>
+</section>
+
+<section id="work" class="wrap reveal">
+  <div class="section-head">
+    <p class="overline">Selected Work</p>
+    <h2>Systems I'm proud of</h2>
+  </div>
+  <div class="work-grid">
+    <article class="card">
+      <p class="where">Onsurity · InsurTech</p>
+      <h3>EDITH — AI-Driven Insurance Platform</h3>
+      <p>Unified insurance platform replacing 54 manual Excel raters (10K+ lines of VBA) with a single engine — microservices, Temporal workflows, maker-checker governance, and open-source LLM orchestration (Qwen, DeepSeek) spanning underwriting, onboarding, claims, and billing.</p>
+      <div class="metric">Quote turnaround: <em>2+ days → under 5 minutes</em></div>
+      <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Temporal</span><span class="tag">LLM Orchestration</span><span class="tag">Snowflake</span></div>
+    </article>
+    <article class="card">
+      <p class="where">Onsurity · InsurTech</p>
+      <h3>ClaimX — Claims Processing System</h3>
+      <p>End-to-end claim processing in Java/Spring Boot with TPA integrations (Medi Assist, Vidal, Paramount) and real-time notifications — later extended with AI-enabled claim classification, adjudication, and settlement for cashless and reimbursement flows.</p>
+      <div class="metric">Built while <em>mentoring a 6-engineer team</em></div>
+      <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">TPA Integration</span><span class="tag">Event-Driven</span></div>
+    </article>
+    <article class="card">
+      <p class="where">Infoblox · Network Security</p>
+      <h3>Distributed DNS Security Platform</h3>
+      <p>Java-based microservices platform protecting enterprises against DDoS attacks, with distributed caching and load balancing — plus identity services (user identity mapping, device fingerprinting, SSO) and a Network Discovery Engine (automated IPAM) for asset tracking.</p>
+      <div class="metric"><em>7B+ queries daily</em> · 60% faster responses</div>
+      <div class="tags"><span class="tag">Java</span><span class="tag">Microservices</span><span class="tag">Distributed Caching</span><span class="tag">DNS Security</span><span class="tag">Identity</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="experience" class="wrap reveal">
+  <div class="section-head">
+    <p class="overline">Experience</p>
+    <h2>Nine years, six teams, one trajectory</h2>
+  </div>
+  <div class="xp">
+
+    <div class="xp-item">
+      <div class="xp-head"><h3>Onsurity</h3><span class="xp-dates">July 2022 — Present</span></div>
+      <p class="xp-meta">Bengaluru, India · Insurance Technology</p>
+
+      <div class="role">
+        <div class="role-head"><h4>Software Architect</h4><span class="rd">Oct 2025 — Present</span></div>
+        <ul>
+          <li>Co-leading the engineering team with one peer, with <strong>23 engineers directly reporting</strong> (12 backend, 4 AI/ML, 2 frontend, 5 QA), and working directly with the leadership team.</li>
+          <li>Architected and lead development of <strong>EDITH</strong>, Onsurity's unified AI-driven insurance platform — replacing 54 manual Excel raters (10K+ lines of VBA) with a single engine on microservices, Temporal workflows, maker-checker governance, and open-source LLM orchestration (Qwen, DeepSeek):</li>
+        </ul>
+        <ul class="scope">
+          <li><strong>Underwriting &amp; Pricing:</strong> GLM/actuarial pricing, automated member-data cleaning, multi-insurer quote generation — quote turnaround cut from 2+ days to under 5 minutes.</li>
+          <li><strong>Onboarding &amp; Integration:</strong> customer onboarding, subscription creation, and automated data exchange with insurers and TPAs across the full policy lifecycle.</li>
+          <li><strong>Claims:</strong> AI-enabled claim classification, adjudication, and settlement for cashless and reimbursement flows.</li>
+          <li><strong>Billing &amp; x2API:</strong> B2B billing and reconciliation, plus an engine exposing the actuarial pricing calculator as a REST API for programmatic pricing.</li>
+        </ul>
+        <ul>
+          <li>Architected an end-to-end retail insurance platform for motor and health products with multi-tenant capabilities, serving <strong>500K+ users</strong>.</li>
+          <li>Deliver scalable InsurTech solutions on Java, Spring Boot, and Snowflake, overseeing a dedicated data engineering group for analytics and pipelines.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><h4>Software Development Engineer 3</h4><span class="rd">Apr 2024 — Sep 2025</span></div>
+        <ul>
+          <li>Delivered mission-critical InsurTech features as a senior engineer, leading development across a <strong>14-engineer team</strong> on a distributed microservices architecture with Snowflake-backed data engineering.</li>
+          <li>Built an Excel-to-API engine converting spreadsheets to REST APIs, reducing manual data processing by <strong>60%</strong>.</li>
+          <li>Led design of a secure multi-tenant Broker Management System; implemented an AI chatbot with NLP/LLM integration that cut onboarding time by <strong>40%</strong>.</li>
+          <li>Built scalable Snowflake data pipelines and Java-based ETL workflows for claims insights and business intelligence.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head"><h4>Software Development Engineer 2</h4><span class="rd">Jul 2022 — Mar 2024</span></div>
+        <ul>
+          <li>Led development of <strong>ClaimX</strong>, an end-to-end claim processing system in Java/Spring Boot with TPA integrations (Medi Assist, Vidal, Paramount) and real-time notifications, mentoring a 6-engineer team.</li>
+          <li>Developed an Insurer Enrollment Service for rapid member enrollment with COI generation, and <strong>Loansure</strong>, an emergency loan microservice with automatic recovery from settlements.</li>
+          <li>Delivered OCR document processing and an intelligent support chatbot; achieved <strong>35% latency reduction</strong> through microservices optimization and caching.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-head"><h3>Halodoc</h3><span class="xp-dates">Apr 2022 — Jun 2022</span></div>
+      <p class="xp-meta">Bengaluru, India · Healthcare Technology — Software Development Engineer II</p>
+      <ul>
+        <li>Developed Java microservices for a patient consultation system handling <strong>10,000+ daily consultations</strong>; integrated real-time WebRTC video, cutting patient wait times by 40%.</li>
+      </ul>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-head"><h3>Infoblox</h3><span class="xp-dates">Mar 2020 — Mar 2022</span></div>
+      <p class="xp-meta">Bengaluru, India · Network Security — Software Engineer</p>
+      <ul>
+        <li>Built a distributed DNS security platform protecting against DDoS attacks and serving <strong>7B+ queries daily</strong>, using Java-based microservices.</li>
+        <li>Improved DNS query response times by <strong>60%</strong> through distributed caching and load-balancing strategies.</li>
+        <li>Developed the platform's <strong>identity services</strong> — user identity mapping tying network and DNS activity to user identities for security policy and reporting, device identity and fingerprinting, and authentication/SSO for platform access.</li>
+        <li>Developed a Java-based Network Discovery Engine (automated IPAM) for enterprise infrastructure monitoring and asset tracking.</li>
+      </ul>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-head"><h3>Goldman Sachs</h3><span class="xp-dates">Nov 2019 — Mar 2020</span></div>
+      <p class="xp-meta">Bengaluru, India · Financial Services — Software Engineer II</p>
+      <ul>
+        <li>Managed and optimized an Elasticsearch cluster for financial data indexing supporting trading platforms.</li>
+      </ul>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-head"><h3>Ultria</h3><span class="xp-dates">Jul 2017 — Nov 2019</span></div>
+      <p class="xp-meta">Bengaluru, India · Contract Lifecycle Management — Software Developer</p>
+      <ul>
+        <li>Developed a SAML 2.0 multi-tenant SSO authentication system for CLM applications.</li>
+        <li>Built an Elasticsearch-based contract search engine across millions of contracts, improving search performance by <strong>75%</strong>.</li>
+        <li>Created a Dynamic Word Template Engine for automated contract document generation with custom clauses.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="wrap reveal">
+  <div class="section-head">
+    <p class="overline">Skills</p>
+    <h2>Core competencies</h2>
+  </div>
+  <div class="skill-row">
+    <div class="cat">Languages</div>
+    <div class="skill-tags"><span class="tag">Java</span><span class="tag">GoLang</span><span class="tag">Python</span></div>
+  </div>
+  <div class="skill-row">
+    <div class="cat">Frameworks &amp; Architecture</div>
+    <div class="skill-tags"><span class="tag">Spring Boot</span><span class="tag">Microservices</span><span class="tag">Distributed Systems</span><span class="tag">Event-Driven Architecture</span><span class="tag">Temporal Workflows</span><span class="tag">REST APIs</span><span class="tag">System Design</span></div>
+  </div>
+  <div class="skill-row">
+    <div class="cat">Data &amp; Storage</div>
+    <div class="skill-tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">ElasticSearch</span><span class="tag">Snowflake</span><span class="tag">ETL Pipelines</span><span class="tag">Kafka</span></div>
+  </div>
+  <div class="skill-row">
+    <div class="cat">Cloud &amp; DevOps</div>
+    <div class="skill-tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">CI/CD</span></div>
+  </div>
+  <div class="skill-row">
+    <div class="cat">AI/ML &amp; Security</div>
+    <div class="skill-tags"><span class="tag">NLP</span><span class="tag">LLM Integration &amp; Orchestration</span><span class="tag">AI Chatbots</span><span class="tag">OCR</span><span class="tag">SAML 2.0</span><span class="tag">SSO</span><span class="tag">OAuth</span><span class="tag">Identity Mapping</span></div>
+  </div>
+  <div class="skill-row">
+    <div class="cat">Domain Expertise</div>
+    <div class="skill-tags"><span class="tag">Insurance Technology</span><span class="tag">Healthcare Technology</span><span class="tag">TPA Integration</span></div>
+  </div>
+</section>
+
+<section id="education" class="wrap reveal">
+  <div class="section-head">
+    <p class="overline">Education</p>
+    <h2>Foundations</h2>
+  </div>
+  <div class="edu">
+    <div>
+      <h3>Bachelor of Engineering, Computer Science</h3>
+      <p class="school">Vivekananda College of Engineering &amp; Technology, Puttur · Grade: A+</p>
+    </div>
+    <span class="when">Aug 2013 — Apr 2017</span>
+  </div>
+</section>
+
+<section id="contact" class="contact wrap reveal">
+  <p class="overline">Contact</p>
+  <h2>Let's build something that lasts</h2>
+  <p class="sub">Open to conversations about architecture, InsurTech, distributed systems, and engineering leadership.</p>
+  <a class="btn btn-primary" href="mailto:karthikmapalakaje@gmail.com">karthikmapalakaje@gmail.com</a>
+  <div class="contact-details">
+    <div class="cd"><span class="k">Phone (IN)</span><a href="tel:+918762921402">+91 87629 21402</a></div>
+    <div class="cd"><span class="k">Phone (UK)</span><a href="tel:+447437100938">+44 7437 100938</a></div>
+    <div class="cd"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/karthik-mapalakaje" target="_blank" rel="noopener">in/karthik-mapalakaje</a></div>
+    <div class="cd"><span class="k">Location</span>Bengaluru, Karnataka, India</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year">2026</span> Karthik M · Bengaluru, India</div>
+    <div><a href="https://www.linkedin.com/in/karthik-mapalakaje" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:karthikmapalakaje@gmail.com">karthikmapalakaje@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var toggle = document.querySelector('.nav-toggle');
+var links = document.getElementById('navLinks');
+toggle.addEventListener('click', function () {
+  var open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+links.addEventListener('click', function (e) {
+  if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+});
+
+// In-page navigation via JS scrolling (works even in sandboxed previews that block anchor navigation)
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var id = a.getAttribute('href');
+    var target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (id === '#top') {
+      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    } else {
+      target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    }
+    try { history.replaceState(null, '', id); } catch (err) { /* sandboxed preview */ }
+  });
+});
+
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+}
+</script>
+</body>
+</html>
