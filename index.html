@@ -109,15 +109,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline
 .stat:first-child { border-left: none; }
 .stat .num { font-family: var(--serif); font-weight: 700; font-size: 2.15rem; color: var(--navy-deep); line-height: 1.15; }
 .stat .lbl { font-size: 0.73rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
-.stat.has-note { cursor: pointer; position: relative; }
-.stat.has-note .lbl::after { content: "?"; display: inline-flex; align-items: center; justify-content: center; width: 13px; height: 13px; margin-left: 5px; border: 1px solid var(--line-strong); border-radius: 50%; font-size: 0.6rem; line-height: 1; color: var(--brass); vertical-align: middle; }
-.stat.has-note:hover .lbl::after, .stat.has-note[aria-expanded="true"] .lbl::after { border-color: var(--brass); background: var(--brass); color: var(--card); }
-.stat-note { position: absolute; z-index: 40; left: 50%; transform: translateX(-50%); top: calc(100% - 6px); width: min(340px, 86vw); background: var(--card); border: 1px solid var(--line-strong); border-radius: 4px; box-shadow: 0 14px 34px rgba(20,48,74,0.14); padding: 16px 18px; text-align: left; font-family: var(--sans); font-size: 0.82rem; line-height: 1.55; color: var(--ink); text-transform: none; letter-spacing: 0; font-weight: 400; display: none; }
-.stat.has-note[aria-expanded="true"] .stat-note { display: block; }
+.stat.has-note { cursor: help; position: relative; }
+.stat-note { position: absolute; z-index: 40; left: 50%; transform: translateX(-50%); top: calc(100% - 6px); width: min(340px, 86vw); background: var(--card); border: 1px solid var(--line-strong); border-radius: 4px; box-shadow: 0 14px 34px rgba(20,48,74,0.14); padding: 16px 18px; text-align: left; font-family: var(--sans); font-size: 0.82rem; line-height: 1.55; color: var(--ink); text-transform: none; letter-spacing: 0; font-weight: 400; opacity: 0; visibility: hidden; transition: opacity 0.15s ease, visibility 0.15s ease; }
+.stats .stat.has-note:first-child .stat-note { left: 0; transform: none; }
+.stats .stat.has-note:last-child .stat-note { left: auto; right: 0; transform: none; }
+@media (hover: hover) { .stat.has-note:hover .stat-note, .stat.has-note:focus-within .stat-note { opacity: 1; visibility: visible; } }
+.stat.has-note[aria-expanded="true"] .stat-note { opacity: 1; visibility: visible; }
 .stat-note b { color: var(--navy-deep); }
 .stat-note .src { display: block; margin-top: 9px; padding-top: 9px; border-top: 1px solid var(--line); font-size: 0.73rem; color: var(--muted); }
 .stat-note .src a { color: var(--brass); }
-@media (max-width: 720px) { .stat-note { position: fixed; left: 50%; top: auto; bottom: 16px; width: calc(100vw - 32px); } }
+@media (max-width: 720px) { .stats .stat.has-note .stat-note, .stats .stat.has-note:first-child .stat-note, .stats .stat.has-note:last-child .stat-note { position: fixed; left: 50%; right: auto; transform: translateX(-50%); top: auto; bottom: 16px; width: calc(100vw - 32px); max-height: 62vh; overflow-y: auto; } }
 
 /* ---------- Sections ---------- */
 section { padding: 96px 0 0; }
@@ -353,9 +354,9 @@ footer { border-top: 1px solid var(--line); margin-top: 90px; padding: 30px 0 36
     <a class="btn btn-ghost" href="Karthik_M_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
   </div>
   <div class="stats">
-    <div class="stat"><div class="num">9+</div><div class="lbl">Years of Experience</div></div>
-    <div class="stat"><div class="num">23</div><div class="lbl">Direct Reports</div></div>
-    <div class="stat"><div class="num">2M+</div><div class="lbl">Lives Under Active Cover</div></div>
+    <div class="stat has-note" role="button" tabindex="0" aria-expanded="false"><div class="num">9+</div><div class="lbl">Years of Experience</div><div class="stat-note"><b>Where the nine years went.</b> Nine years and one month of backend engineering since July 2017 — contract lifecycle management at Ultria, enterprise search for Goldman Sachs on a Saggezza placement, DNS security and identity at Infoblox, a HIPAA-compliant health record at Halodoc, and the InsurTech platform and applied-AI work at Onsurity.<br><br><b>What stayed constant.</b> Java and Go for the services, Python for the AI systems, and in every one of them a manual, high-stakes process rebuilt into something that holds under load.</div></div>
+    <div class="stat has-note" role="button" tabindex="0" aria-expanded="false"><div class="num">23</div><div class="lbl">Direct Reports</div><div class="stat-note"><b>What the 23 covers.</b> Twelve backend engineers, four AI/ML, two frontend and five QA, reporting directly — hiring, onboarding, performance reviews and promotions.<br><br><b>How far it reached.</b> The standards set inside that group were adopted across the wider 45-person engineering function of a 300-plus person company, alongside a dedicated data engineering group for analytics and pipelines.</div></div>
+    <div class="stat has-note" role="button" tabindex="0" aria-expanded="false"><div class="num">2M+</div><div class="lbl">Lives Under Active Cover</div><div class="stat-note"><b>Whose number this is.</b> Onsurity publishes 2 million lives — 20 lakh employees — covered across more than 10,000 businesses. That is the company’s figure.<br><br><b>What I built inside it.</b> The B2B2C platform those policies are administered on: enrolment, endorsement, claims and billing, carrying 7.5 million registered users, with 200,000 gig workers onboarded and offboarded every day.<span class="src">Source: Onsurity, company metrics, H1 2026. <a href="https://www.onsurity.com/about-onsurity" target="_blank" rel="noopener">Read it</a></span></div></div>
     <div class="stat has-note" role="button" tabindex="0" aria-expanded="false"><div class="num">70B+</div><div class="lbl">Daily DNS Queries · Infoblox Platform</div><div class="stat-note"><b>Whose number this is.</b> Infoblox’s DNS security platform analyses over 70 billion DNS queries a day across thousands of customer environments. That is the platform’s scale, not one engineer’s.<br><br><b>What I built inside it.</b> The DDoS and DNS-layer threat protection in Go, and the identity services every customer was identified through — user identity mapping, device fingerprinting, and authentication and SSO. The services I took to production handled 500M+ queries a day during my tenure, 2020–2022.<span class="src">Source: Infoblox, 2025 DNS Threat Landscape Report. <a href="https://www.infoblox.com/news/news-events/press-releases/infoblox-unveils-2025-dns-threat-landscape-report-revealing-surge-in-ai-driven-threats-and-malicious-adtech/" target="_blank" rel="noopener">Read it</a></span></div></div>
   </div>
 </section>
@@ -573,6 +574,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Stat tiles that carry a provenance note: click or keyboard to open, Esc or outside click to close.
 (function () {
   var tiles = document.querySelectorAll('.stat.has-note');
+  var canHover = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches);
   function closeAll(except) {
     tiles.forEach(function (t) { if (t !== except) { t.setAttribute('aria-expanded', 'false'); } });
   }
@@ -584,7 +586,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       closeAll(tile);
       tile.setAttribute('aria-expanded', open ? 'false' : 'true');
     }
-    tile.addEventListener('click', toggle);
+    if (!canHover) { tile.addEventListener('click', toggle); }
     tile.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e); }
       if (e.key === 'Escape') { tile.setAttribute('aria-expanded', 'false'); }
