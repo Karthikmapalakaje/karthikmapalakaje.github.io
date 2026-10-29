@@ -189,6 +189,15 @@ section { padding: 96px 0 0; }
 .scope { margin: 6px 0 4px; }
 .scope li { padding-bottom: 7px; }
 
+/* ---------- Leadership ---------- */
+.lead-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 48px; }
+.lead-note { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 26px 28px; }
+.lead-note h3 { font-family: var(--serif); font-weight: 600; font-size: 1.18rem; color: var(--navy-deep); margin-bottom: 13px; }
+.lead-note p { font-size: 0.95rem; line-height: 1.72; color: #3c4652; }
+.lead-note p + p { margin-top: 13px; }
+.lead-note strong { color: var(--navy-deep); font-weight: 600; }
+@media (max-width: 860px) { .lead-notes { grid-template-columns: 1fr; gap: 18px; } }
+
 /* ---------- Skills ---------- */
 .skill-row {
   display: grid; grid-template-columns: 230px 1fr; gap: 10px 34px;
@@ -334,6 +343,7 @@ footer { border-top: 1px solid var(--line); margin-top: 90px; padding: 30px 0 36
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#leadership">Leadership</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
@@ -411,6 +421,61 @@ footer { border-top: 1px solid var(--line); margin-top: 90px; padding: 30px 0 36
       <div class="metric"><em>7B+ queries daily</em> · 60% faster responses</div>
       <div class="tags"><span class="tag">Go</span><span class="tag">Microservices</span><span class="tag">Distributed Caching</span><span class="tag">DNS Security</span><span class="tag">Identity</span></div>
     </article>
+  </div>
+</section>
+
+<section id="leadership" class="wrap reveal">
+  <div class="section-head">
+    <p class="overline">Leadership</p>
+    <h2>Scope taken, not granted</h2>
+  </div>
+  <div class="xp">
+    <div class="xp-item">
+      <div class="xp-head"><h3>A team of eight, in year two</h3><span class="xp-dates">2018 &middot; Ultria</span></div>
+      <ul><li>Eight engineers, most of them about a year in. Work allocation, design and code review, and technical direction were mine. It was the first time the quality of other people&rsquo;s work was my problem.</li></ul>
+    </div>
+    <div class="xp-item">
+      <div class="xp-head"><h3>Leading from the first day at Onsurity</h3><span class="xp-dates">2022 &middot; SDE-2</span></div>
+      <ul><li>I joined as a Software Development Engineer 2 and led a team from the start of the role. The title came later. We built ClaimX and the claims estate behind it.</li></ul>
+    </div>
+    <div class="xp-item">
+      <div class="xp-head"><h3>Two teams, fourteen engineers, and the HR side</h3><span class="xp-dates">2023 &middot; SDE-3</span></div>
+      <ul><li>Hiring, onboarding, performance reviews and promotions became mine in 2023 &mdash; fourteen engineers across two teams, with the decisions that affect someone&rsquo;s pay and progression sitting with me.</li></ul>
+    </div>
+    <div class="xp-item">
+      <div class="xp-head"><h3>Two Directors left. I absorbed both teams.</h3><span class="xp-dates">2024&ndash;2025</span></div>
+      <ul><li>The first departure added fourteen engineers and seven more services while I was still running my own line. When a second Director left, I took that team as well. Neither was a promotion; both were the work that needed doing.</li></ul>
+    </div>
+    <div class="xp-item">
+      <div class="xp-head"><h3>Six months covering the Head of Engineering role</h3><span class="xp-dates">Feb&ndash;Aug 2026</span></div>
+      <ul><li>When the Head of Engineering left in February 2026 I covered half the technology organisation and represented it in leadership meetings. Team leads reported to me for the first time. <strong>I covered the role. I never held the title</strong> &mdash; and the distinction matters enough to state it plainly.</li></ul>
+    </div>
+    <div class="xp-item">
+      <div class="xp-head"><h3>Twenty-three engineers across four functions</h3><span class="xp-dates">Today</span></div>
+      <ul><li>Twelve backend, four AI/ML, two frontend and five QA, grown from two people. The standards set inside that group were adopted across the 45-person engineering function of a 300-plus person company.</li></ul>
+    </div>
+  </div>
+  <div class="lead-notes">
+    <div class="lead-note">
+      <h3>Taking 45 engineers onto AI tooling</h3>
+      <p>I took the 45-person technology organisation onto AI-assisted development, introduced
+         Claude Code, ran an impact analysis and presented the result to the CEO. Adoption ran on
+         usefulness. That meant telling teams more than once that they should <em>not</em> use it
+         for that particular problem.</p>
+      <p>The part I did not expect: I now review a great deal of AI-generated code in languages I
+         do not write day to day, including our React web and native mobile work. The review bar is
+         the same as for anything hand-written. <strong>Knowing what to ask of code you did not
+         write turns out to be most of the skill.</strong></p>
+    </div>
+    <div class="lead-note">
+      <h3>Getting architecture decisions made</h3>
+      <p><strong>Stop arguing the architecture and start arguing the risk.</strong> I quantify the
+         cost in the stakeholder&rsquo;s own currency, then reshape the proposal so the answer can
+         be yes &mdash; incremental migration, old and new paths running side by side until the
+         outputs match &mdash; and I bring my own counter-arguments before anyone else has to.</p>
+      <p>The 54-service consolidation went through on that basis, approved by the CTO. The
+         design-review practice behind it was then adopted across all 45 engineers.</p>
+    </div>
   </div>
 </section>
 
